@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activititys.MainActivity">
+
+    <TextView
+        android:id="@+id/taskToDoText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Daily Task"
+        android:textSize="35sp"
+        android:textColor="#F44336"
+        android:layout_margin="10dp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btnAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/taskToDoText"
+        android:layout_margin="10dp"
+        android:backgroundTint="#FABC61"
+        app:cardCornerRadius="8dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Task"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:padding="16dp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recTodo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/btnAdd"
+        android:layout_above="@id/cards"
+        android:layout_margin="10dp"
+        tools:listitem="@layout/todo_layout" />
+
+    <LinearLayout
+        android:id="@+id/cards"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:padding="16dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardDQ"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:backgroundTint="#FFE5DEFF"
+            app:cardCornerRadius="8dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Daily Question"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:padding="16dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardFT"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:backgroundTint="#FFE5DEFF"
+            app:cardCornerRadius="8dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Focus Time"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:padding="16dp" />
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/cardAi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/cards"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="20dp"
+        android:contentDescription="for adding ele in todo"
+        android:src="@drawable/aicon" />
+</RelativeLayout>

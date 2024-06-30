@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ButtonStyleDark">
+        <item name="android:backgroundTint">#006FA1</item>
+        <item name="android:textColor">?colorOnPrimary</item>
+    </style>
+    <style name="TextInputOutlined" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="hintEnabled">false</item>
+    </style>
+    <style name="TextAppHeadingMedium">
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.LabelLarge</item>
+    </style>
+</resources>

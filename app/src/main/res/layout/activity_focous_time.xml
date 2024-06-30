@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activititys.FocousTimeActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:padding="5dp"
+                android:src="@drawable/chatbot"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/userName"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="Focus Time"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/profile_image"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llAadhaar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="30dp"
+            android:padding="@dimen/large">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppHeadingMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/large"
+                android:text="Enter Focus Time In Hours"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtTime"
+                style="@style/TextInputOutlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="ex: 1.5"
+                    android:letterSpacing="0.2"
+                    android:textAlignment="viewStart"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnStart"
+                style="@style/ButtonStyleDark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/large"
+                android:layout_marginBottom="@dimen/large"
+                android:text="Start" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/large">
+
+            <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                android:id="@+id/circularProgressBar"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:cpb_background_progressbar_color="#b6bbd8"
+                app:cpb_background_progressbar_width="5dp"
+                app:cpb_progress_direction="to_right"
+                app:cpb_progressbar_color="#3f51b5"
+                app:cpb_progressbar_width="10dp"
+                app:cpb_round_border="false"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="16dp"/>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvHours"
+                    style="@style/TextAppHeadingMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="HH"
+                    android:textSize="24sp"
+                    android:layout_marginEnd="4dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="24sp"
+                    android:textColor="@android:color/black" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvMinutes"
+                    style="@style/TextAppHeadingMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MM"
+                    android:textSize="24sp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="24sp"
+                    android:textColor="@android:color/black" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvSeconds"
+                    style="@style/TextAppHeadingMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SS"
+                    android:textSize="24sp"
+                    android:layout_marginStart="4dp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</RelativeLayout>
